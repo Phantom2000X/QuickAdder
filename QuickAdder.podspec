@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "**/*.{h,m}"
+  s.source_files  = "QuickAdder/Classes/*.{h,m}"
   #s.exclude_files = "QuickAdder/Exclude"
 
   #s.public_header_files = "QuickAdder/**/*.h"
