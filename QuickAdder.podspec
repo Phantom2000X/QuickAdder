@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   Help developer to create a UIAlertController with UITextField to create a NSDictionary for add item into UITableView UICollectionView.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/QuickAdder"
+  s.homepage     = "https://github.com/Phantom2000X/QuickAdder"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -91,10 +91,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "QuickAdder/Classes/*.{h,m}"
+  s.source_files  = "Classes/*.{h,m}"
   #s.exclude_files = "QuickAdder/Exclude"
 
-  #s.public_header_files = "QuickAdder/**/*.h"
+  s.public_header_files = "Classes/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
