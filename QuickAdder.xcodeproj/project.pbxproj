@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF22E5171E8770E800A69469 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF22E5161E8770E800A69469 /* main.m */; };
+		FF22E51A1E8770E800A69469 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF22E5191E8770E800A69469 /* AppDelegate.m */; };
+		FF22E51D1E8770E800A69469 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF22E51C1E8770E800A69469 /* ViewController.m */; };
+		FF22E5201E8770E800A69469 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF22E51E1E8770E800A69469 /* Main.storyboard */; };
+		FF22E5221E8770E800A69469 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF22E5211E8770E800A69469 /* Assets.xcassets */; };
+		FF22E5251E8770E800A69469 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF22E5231E8770E800A69469 /* LaunchScreen.storyboard */; };
+		FF22E5301E8770E800A69469 /* QuickAdderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF22E52F1E8770E800A69469 /* QuickAdderTests.m */; };
+		FF22E53B1E8770E800A69469 /* QuickAdderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF22E53A1E8770E800A69469 /* QuickAdderUITests.m */; };
+		FF57AB311E88AC81005AB609 /* QuickAdder.m in Sources */ = {isa = PBXBuildFile; fileRef = FF57AB301E88AC81005AB609 /* QuickAdder.m */; };
+		FF57AB321E88B35C005AB609 /* QuickAdder.m in Sources */ = {isa = PBXBuildFile; fileRef = FF57AB301E88AC81005AB609 /* QuickAdder.m */; };
+		FF7EF1AA1E962F0F005C4220 /* QuickAdderForImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7EF1A91E962F0F005C4220 /* QuickAdderForImage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF22E52C1E8770E800A69469 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF22E50A1E8770E800A69469 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF22E5111E8770E800A69469;
+			remoteInfo = QuickAdder;
+		};
+		FF22E5371E8770E800A69469 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF22E50A1E8770E800A69469 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF22E5111E8770E800A69469;
+			remoteInfo = QuickAdder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF22E5121E8770E800A69469 /* QuickAdder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickAdder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF22E5161E8770E800A69469 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF22E5181E8770E800A69469 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FF22E5191E8770E800A69469 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FF22E51B1E8770E800A69469 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FF22E51C1E8770E800A69469 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FF22E51F1E8770E800A69469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF22E5211E8770E800A69469 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF22E5241E8770E800A69469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF22E5261E8770E800A69469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF22E52B1E8770E800A69469 /* QuickAdderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickAdderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF22E52F1E8770E800A69469 /* QuickAdderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickAdderTests.m; sourceTree = "<group>"; };
+		FF22E5311E8770E800A69469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF22E5361E8770E800A69469 /* QuickAdderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickAdderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF22E53A1E8770E800A69469 /* QuickAdderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickAdderUITests.m; sourceTree = "<group>"; };
+		FF22E53C1E8770E800A69469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF57AB2F1E88AC81005AB609 /* QuickAdder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickAdder.h; sourceTree = "<group>"; };
+		FF57AB301E88AC81005AB609 /* QuickAdder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickAdder.m; sourceTree = "<group>"; };
+		FF7EF1A81E962F0F005C4220 /* QuickAdderForImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickAdderForImage.h; sourceTree = "<group>"; };
+		FF7EF1A91E962F0F005C4220 /* QuickAdderForImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickAdderForImage.m; sourceTree = "<group>"; };
+		FFC1C28B1E8B5F4A0041D44E /* QuickAdderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickAdderDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF22E50F1E8770E800A69469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF22E5281E8770E800A69469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF22E5331E8770E800A69469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF22E5091E8770E800A69469 = {
+			isa = PBXGroup;
+			children = (
+				FF22E5141E8770E800A69469 /* QuickAdder */,
+				FF22E52E1E8770E800A69469 /* QuickAdderTests */,
+				FF22E5391E8770E800A69469 /* QuickAdderUITests */,
+				FF22E5131E8770E800A69469 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF22E5131E8770E800A69469 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF22E5121E8770E800A69469 /* QuickAdder.app */,
+				FF22E52B1E8770E800A69469 /* QuickAdderTests.xctest */,
+				FF22E5361E8770E800A69469 /* QuickAdderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF22E5141E8770E800A69469 /* QuickAdder */ = {
+			isa = PBXGroup;
+			children = (
+				FF22E5181E8770E800A69469 /* AppDelegate.h */,
+				FF22E5191E8770E800A69469 /* AppDelegate.m */,
+				FF22E51B1E8770E800A69469 /* ViewController.h */,
+				FF22E51C1E8770E800A69469 /* ViewController.m */,
+				FF57AB2F1E88AC81005AB609 /* QuickAdder.h */,
+				FF57AB301E88AC81005AB609 /* QuickAdder.m */,
+				FF7EF1A81E962F0F005C4220 /* QuickAdderForImage.h */,
+				FF7EF1A91E962F0F005C4220 /* QuickAdderForImage.m */,
+				FFC1C28B1E8B5F4A0041D44E /* QuickAdderDelegate.h */,
+				FF22E51E1E8770E800A69469 /* Main.storyboard */,
+				FF22E5211E8770E800A69469 /* Assets.xcassets */,
+				FF22E5231E8770E800A69469 /* LaunchScreen.storyboard */,
+				FF22E5261E8770E800A69469 /* Info.plist */,
+				FF22E5151E8770E800A69469 /* Supporting Files */,
+			);
+			path = QuickAdder;
+			sourceTree = "<group>";
+		};
+		FF22E5151E8770E800A69469 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF22E5161E8770E800A69469 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF22E52E1E8770E800A69469 /* QuickAdderTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF22E52F1E8770E800A69469 /* QuickAdderTests.m */,
+				FF22E5311E8770E800A69469 /* Info.plist */,
+			);
+			path = QuickAdderTests;
+			sourceTree = "<group>";
+		};
+		FF22E5391E8770E800A69469 /* QuickAdderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF22E53A1E8770E800A69469 /* QuickAdderUITests.m */,
+				FF22E53C1E8770E800A69469 /* Info.plist */,
+			);
+			path = QuickAdderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF22E5111E8770E800A69469 /* QuickAdder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF22E53F1E8770E800A69469 /* Build configuration list for PBXNativeTarget "QuickAdder" */;
+			buildPhases = (
+				FF22E50E1E8770E800A69469 /* Sources */,
+				FF22E50F1E8770E800A69469 /* Frameworks */,
+				FF22E5101E8770E800A69469 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickAdder;
+			productName = QuickAdder;
+			productReference = FF22E5121E8770E800A69469 /* QuickAdder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF22E52A1E8770E800A69469 /* QuickAdderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF22E5421E8770E800A69469 /* Build configuration list for PBXNativeTarget "QuickAdderTests" */;
+			buildPhases = (
+				FF22E5271E8770E800A69469 /* Sources */,
+				FF22E5281E8770E800A69469 /* Frameworks */,
+				FF22E5291E8770E800A69469 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF22E52D1E8770E800A69469 /* PBXTargetDependency */,
+			);
+			name = QuickAdderTests;
+			productName = QuickAdderTests;
+			productReference = FF22E52B1E8770E800A69469 /* QuickAdderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF22E5351E8770E800A69469 /* QuickAdderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF22E5451E8770E800A69469 /* Build configuration list for PBXNativeTarget "QuickAdderUITests" */;
+			buildPhases = (
+				FF22E5321E8770E800A69469 /* Sources */,
+				FF22E5331E8770E800A69469 /* Frameworks */,
+				FF22E5341E8770E800A69469 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF22E5381E8770E800A69469 /* PBXTargetDependency */,
+			);
+			name = QuickAdderUITests;
+			productName = QuickAdderUITests;
+			productReference = FF22E5361E8770E800A69469 /* QuickAdderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF22E50A1E8770E800A69469 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = PhantomX;
+				TargetAttributes = {
+					FF22E5111E8770E800A69469 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = B924RY6M34;
+						ProvisioningStyle = Automatic;
+					};
+					FF22E52A1E8770E800A69469 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = B924RY6M34;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FF22E5111E8770E800A69469;
+					};
+					FF22E5351E8770E800A69469 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = B924RY6M34;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FF22E5111E8770E800A69469;
+					};
+				};
+			};
+			buildConfigurationList = FF22E50D1E8770E800A69469 /* Build configuration list for PBXProject "QuickAdder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF22E5091E8770E800A69469;
+			productRefGroup = FF22E5131E8770E800A69469 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF22E5111E8770E800A69469 /* QuickAdder */,
+				FF22E52A1E8770E800A69469 /* QuickAdderTests */,
+				FF22E5351E8770E800A69469 /* QuickAdderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF22E5101E8770E800A69469 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF22E5251E8770E800A69469 /* LaunchScreen.storyboard in Resources */,
+				FF22E5221E8770E800A69469 /* Assets.xcassets in Resources */,
+				FF22E5201E8770E800A69469 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF22E5291E8770E800A69469 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF22E5341E8770E800A69469 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF22E50E1E8770E800A69469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF57AB311E88AC81005AB609 /* QuickAdder.m in Sources */,
+				FF22E51D1E8770E800A69469 /* ViewController.m in Sources */,
+				FF7EF1AA1E962F0F005C4220 /* QuickAdderForImage.m in Sources */,
+				FF22E51A1E8770E800A69469 /* AppDelegate.m in Sources */,
+				FF22E5171E8770E800A69469 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF22E5271E8770E800A69469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF22E5301E8770E800A69469 /* QuickAdderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF22E5321E8770E800A69469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF57AB321E88B35C005AB609 /* QuickAdder.m in Sources */,
+				FF22E53B1E8770E800A69469 /* QuickAdderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF22E52D1E8770E800A69469 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF22E5111E8770E800A69469 /* QuickAdder */;
+			targetProxy = FF22E52C1E8770E800A69469 /* PBXContainerItemProxy */;
+		};
+		FF22E5381E8770E800A69469 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF22E5111E8770E800A69469 /* QuickAdder */;
+			targetProxy = FF22E5371E8770E800A69469 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FF22E51E1E8770E800A69469 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF22E51F1E8770E800A69469 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF22E5231E8770E800A69469 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF22E5241E8770E800A69469 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF22E53D1E8770E800A69469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FF22E53E1E8770E800A69469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF22E5401E8770E800A69469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B924RY6M34;
+				INFOPLIST_FILE = QuickAdder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hci.QuickAdder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF22E5411E8770E800A69469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B924RY6M34;
+				INFOPLIST_FILE = QuickAdder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hci.QuickAdder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FF22E5431E8770E800A69469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B924RY6M34;
+				INFOPLIST_FILE = QuickAdderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hci.QuickAdderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickAdder.app/QuickAdder";
+			};
+			name = Debug;
+		};
+		FF22E5441E8770E800A69469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B924RY6M34;
+				INFOPLIST_FILE = QuickAdderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hci.QuickAdderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickAdder.app/QuickAdder";
+			};
+			name = Release;
+		};
+		FF22E5461E8770E800A69469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = B924RY6M34;
+				INFOPLIST_FILE = QuickAdderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hci.QuickAdderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QuickAdder;
+			};
+			name = Debug;
+		};
+		FF22E5471E8770E800A69469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = B924RY6M34;
+				INFOPLIST_FILE = QuickAdderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hci.QuickAdderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QuickAdder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF22E50D1E8770E800A69469 /* Build configuration list for PBXProject "QuickAdder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF22E53D1E8770E800A69469 /* Debug */,
+				FF22E53E1E8770E800A69469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF22E53F1E8770E800A69469 /* Build configuration list for PBXNativeTarget "QuickAdder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF22E5401E8770E800A69469 /* Debug */,
+				FF22E5411E8770E800A69469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF22E5421E8770E800A69469 /* Build configuration list for PBXNativeTarget "QuickAdderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF22E5431E8770E800A69469 /* Debug */,
+				FF22E5441E8770E800A69469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF22E5451E8770E800A69469 /* Build configuration list for PBXNativeTarget "QuickAdderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF22E5461E8770E800A69469 /* Debug */,
+				FF22E5471E8770E800A69469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF22E50A1E8770E800A69469 /* Project object */;
+}
