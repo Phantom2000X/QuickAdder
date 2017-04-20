@@ -14,9 +14,9 @@
     @protected
     NSDictionary<NSString *, NSString *> *keyRegularDictionary;
     UIAlertController *alertController;
-    UIAlertAction *okAction;
+    UIAlertAction __block *okAction;
     NSDictionary<NSString *, NSNumber *> *correctTextFieldCount;
-    UIViewController *viewController;
+    UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate> *viewController;
     NSMutableDictionary<NSString *, id> * _Nonnull returnDataDictionary;
 }
 
@@ -28,7 +28,9 @@
 
 - (void)openQuickAdder;
 
-- (void)textFieldDidChange: (UITextField *)theTextField;
+- (void)textFieldDidChange: (UITextField *_Nonnull)theTextField;
+
+- (BOOL)checkTextFieldsIsRight: (UITextField *_Nonnull)theTextField;
 
 + (UIViewController *_Nonnull)getViewControllerWithView: (UIView *_Nonnull)view;
 

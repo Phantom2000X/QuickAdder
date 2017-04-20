@@ -22,12 +22,12 @@
 
 - (instancetype)initQuickAdderForImageWithViewController:(UIViewController *)vc pictureCanBeNil:(BOOL)pcbn ImageName:(NSString *)n title:(NSString *)tt message:(NSString *)msg keyDictionary:(NSDictionary<NSString *,NSString *> *)dic {
     if (self = [super initQuickAdderWithViewController:vc title:tt message:msg keyDictionary:dic]) {
+        imagePicker = [[UIImagePickerController alloc] init];
+        [imagePicker setDelegate:viewController];
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         pictureCanBeNil = pcbn;
         imageName = n;
         UIAlertAction *openImagePicker = [UIAlertAction actionWithTitle:@"打开图片选择器" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            imagePicker = [[UIImagePickerController alloc] init];
-            [imagePicker setDelegate:viewController];
-            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
             [viewController presentViewController:imagePicker animated:true completion:nil];
         }];
         [alertController addAction:openImagePicker];
@@ -37,41 +37,69 @@
 
 
 - (void)textFieldDidChange: (UITextField *)theTextField {
-    [super textFieldDidChange:theTextField];
-    if ([okAction isEnabled]) {
-        if (pictureCanBeNil) {
-            [okAction setEnabled:YES];
-        } else {
-            if (returnDataDictionary[imageName]) {
-                [okAction setEnabled:YES];
+    [okAction setEnabled:NO];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        if ([self checkTextFieldsIsRight:theTextField]) {
+            if (pictureCanBeNil) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [okAction setEnabled:YES];
+                });
+            } else if (returnDataDictionary[imageName]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [okAction setEnabled:YES];
+                });
             }
         }
-    }
+    });
 }
 
 - (void)catchImageFromPicker: (NSNotification *)img {
-    NSString *message;
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[img object] ];
-    if ((message = [alertController message])) {
-        message = [message stringByAppendingString:@"\n\n\n\n\n\n\n"];
-        [alertController setMessage:message];
+    if ([imageView image]) {
+        [imagePicker dismissViewControllerAnimated:YES completion:nil];
+        [imageView setImage:[img object]];
+        [viewController presentViewController:alertController animated:YES completion:nil];
     } else {
-        [alertController setMessage:@"\n\n\n\n\n\n\n"];
+        NSString *message;
+        imageView = [[UIImageView alloc] initWithImage:[img object] ];
+        if ((message = [alertController message])) {
+            message = [message stringByAppendingString:@"\n\n\n\n\n\n\n"];
+            [alertController setMessage:message];
+        } else {
+            [alertController setMessage:@"\n\n\n\n\n\n\n"];
+        }
+        [imagePicker dismissViewControllerAnimated:YES completion:nil];
+        [imageView setFrame:CGRectMake(alertController.view.frame.size.width/2-50, 75, 100, 100)];
+        [imageView setContentMode:UIViewContentModeScaleAspectFit];
+        [imageView setClipsToBounds:YES];
+        [alertController.view addSubview:imageView];
+        [viewController presentViewController:alertController animated:YES completion:nil];
     }
-    [imagePicker dismissViewControllerAnimated:YES completion:nil];
     [returnDataDictionary setObject:[img object] forKey:imageName];
-    [imageView setFrame:CGRectMake(alertController.view.frame.size.width/2-50, 75, 100, 100)];
-    [imageView setContentMode:UIViewContentModeCenter];
-    [imageView setClipsToBounds:YES];
-    [alertController.view addSubview:imageView];
-    [viewController presentViewController:alertController animated:YES completion:nil];
+    if ([self checkAllInTextFiledIsAccordingToRegular]) {
+        [okAction setEnabled:YES];
+    }
+}
+
+- (BOOL)checkAllInTextFiledIsAccordingToRegular {
+    unsigned count = 0;
+    for (NSString *key in correctTextFieldCount) {
+        if ([correctTextFieldCount[key] isEqualToNumber:[NSNumber numberWithInt:1]]) {
+            count++;
+        }
+    }
+    if (count == keyRegularDictionary.count) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)openQuickAdderForImage {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(catchImageFromPicker:) name:IMAGE_PICKER_NOTIFICATION_NAME object:nil];
-    Protocol *imagePickerControllerDelegate = objc_getProtocol("UIImagePickerControllerDelegate");
-    class_addProtocol([viewController class], imagePickerControllerDelegate);
-    class_addMethod([viewController class], @selector(imagePickerController:didFinishPickingMediaWithInfo:), (IMP)imagePickerController, "v@:@@");
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        Protocol *imagePickerControllerDelegate = objc_getProtocol("UIImagePickerControllerDelegate");
+        class_addProtocol([viewController class], imagePickerControllerDelegate);
+        class_addMethod([viewController class], @selector(imagePickerController:didFinishPickingMediaWithInfo:), (IMP)imagePickerController, "v@:@@");
+    });
     [viewController presentViewController:alertController animated:true completion:nil];
 }
 
@@ -85,5 +113,11 @@ void imagePickerController(id self, SEL _cmd, UIImagePickerController *picker, N
     }
     
 }
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 @end

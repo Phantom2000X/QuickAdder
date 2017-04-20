@@ -11,6 +11,7 @@
 
 @interface QuickAdderForImage : QuickAdder
 {
+    UIImageView *imageView;
     NSString *imageName;
     UIImagePickerController *imagePicker;
     BOOL pictureCanBeNil;

@@ -32,7 +32,7 @@
 - (instancetype)initQuickAdderWithViewController:(UIViewController *)vc title:(NSString *)tt message:(NSString *)msg keyDictionary:(NSDictionary<NSString *,NSString *> *)dic {
     if (self = [super init]) {
         __weak typeof(self) weakSelf = self;
-        viewController = vc;
+        viewController = (UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate> *)vc;
         correctTextFieldCount = 0;
         keyRegularDictionary = [dic copy];
         returnDataDictionary = [NSMutableDictionary dictionary];
@@ -40,6 +40,12 @@
         alertController = [UIAlertController alertControllerWithTitle:tt message:msg preferredStyle:UIAlertControllerStyleAlert];
         okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [_delegate quickAdderReturnDictionary:returnDataDictionary];
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+                [returnDataDictionary removeAllObjects];
+            });
+            for (UITextField *textField in [alertController textFields]) {
+                [textField setText:NULL];
+            }
             [alertController dismissViewControllerAnimated:YES completion:nil];
         }];
         UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
@@ -81,31 +87,38 @@
 }
 
 - (void)textFieldDidChange: (UITextField *)theTextField {
+    [okAction setEnabled:NO];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        if ([self checkTextFieldsIsRight:theTextField]) {
+            [okAction setEnabled:YES];
+        }
+    });
+}
+
+- (BOOL)checkTextFieldsIsRight: (UITextField *)theTextField {
     NSString *inputText = theTextField.text;
+    unsigned long count = 0;
     NSRange range = [inputText rangeOfString:keyRegularDictionary[theTextField.placeholder] options:NSRegularExpressionSearch];
-    if (range.location != NSNotFound) {
+    if (range.location == 0 && range.length == [inputText length]) {
         [correctTextFieldCount setValue:[NSNumber numberWithInt:1] forKey:theTextField.placeholder];
-        unsigned long count = 0;
         for (NSString *key in correctTextFieldCount) {
             if ([correctTextFieldCount[key] isEqualToNumber:[NSNumber numberWithInt:1]]) {
                 count++;
             }
         }
         if (count == keyRegularDictionary.count) {
-            [okAction setEnabled:YES];
+                return YES;
         }
     } else {
         [correctTextFieldCount setValue:[NSNumber numberWithInt:0] forKey:theTextField.placeholder];
-        [okAction setEnabled:NO];
+        if (count == keyRegularDictionary.count) {
+            return YES;
+        }
     }
+    return NO;
 }
 
 
 
-
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 @end

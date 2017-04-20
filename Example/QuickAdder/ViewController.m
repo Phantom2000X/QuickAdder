@@ -14,11 +14,15 @@
 
 @implementation ViewController
 {
-
+    QuickAdderForImage *quickAdderForImage;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    NSDictionary *keyDictionary = @{
+                                    @"first" : @"[1]",
+                                    @"second" : @"[1]"
+                                    };
+    quickAdderForImage = [[QuickAdderForImage alloc] initQuickAdderForImageWithViewController:self pictureCanBeNil:NO ImageName:@"Image" title:@"标题" message:@"信息" keyDictionary:keyDictionary];
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -33,13 +37,9 @@
 }
 
 - (IBAction)buttonClick:(UIButton *)sender {
-    QuickAdder *quickAdder;
-    QuickAdderForImage *quickAdderForImage;
-    NSDictionary *keyDictionary = @{
-                                    @"first" : @"\\d",
-                                    @"second" : @"\\d"
-                                    };
-    quickAdderForImage = [[QuickAdderForImage alloc] initQuickAdderForImageWithViewController:self pictureCanBeNil:NO ImageName:@"Image" title:@"标题" message:@"信息" keyDictionary:keyDictionary];
+
+
+
     [quickAdderForImage setDelegate:self];
     [quickAdderForImage openQuickAdderForImage];
 }
