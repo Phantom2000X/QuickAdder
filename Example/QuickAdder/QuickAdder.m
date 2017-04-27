@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 
+
 @implementation QuickAdder
 
 + (UIViewController *)getViewControllerWithView: (UIView *)view
@@ -39,16 +40,11 @@
         correctTextFieldCount = [NSMutableDictionary dictionaryWithDictionary:dic];
         alertController = [UIAlertController alertControllerWithTitle:tt message:msg preferredStyle:UIAlertControllerStyleAlert];
         okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_delegate quickAdderReturnDictionary:returnDataDictionary];
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-                [returnDataDictionary removeAllObjects];
-            });
-            for (UITextField *textField in [alertController textFields]) {
-                [textField setText:NULL];
-            }
-            [alertController dismissViewControllerAnimated:YES completion:nil];
+            [self finishAddItem];
         }];
-        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self cancelAddItem];
+        }];
         for (NSString *key in dic) {
             [correctTextFieldCount setValue:[NSNumber numberWithInt:0] forKey:key];
         }
@@ -70,6 +66,25 @@
     return self;
 }
 
+- (void)cancelAddItem {
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        [returnDataDictionary removeAllObjects];
+    });
+    for (UITextField *textField in [alertController textFields]) {
+        [textField setText:NULL];
+    }
+}
+
+- (void)finishAddItem {
+    [_delegate quickAdderReturnDictionary:returnDataDictionary];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        [returnDataDictionary removeAllObjects];
+    });
+    for (UITextField *textField in [alertController textFields]) {
+        [textField setText:NULL];
+    }
+    [alertController dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)openQuickAdder {
     [viewController presentViewController:alertController animated:YES completion:nil];

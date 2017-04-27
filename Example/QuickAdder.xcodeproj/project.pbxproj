@@ -109,10 +109,11 @@
 		FF22E5141E8770E800A69469 /* QuickAdder */ = {
 			isa = PBXGroup;
 			children = (
+				FFEA6DDD1EAF38EF008997B1 /* Model */,
+				FFEA6DDC1EAF38E1008997B1 /* ViewController */,
+				FFEA6DDB1EAF38B5008997B1 /* ViewModel */,
 				FF22E5181E8770E800A69469 /* AppDelegate.h */,
 				FF22E5191E8770E800A69469 /* AppDelegate.m */,
-				FF22E51B1E8770E800A69469 /* ViewController.h */,
-				FF22E51C1E8770E800A69469 /* ViewController.m */,
 				FF57AB2F1E88AC81005AB609 /* QuickAdder.h */,
 				FF57AB301E88AC81005AB609 /* QuickAdder.m */,
 				FF7EF1A81E962F0F005C4220 /* QuickAdderForImage.h */,
@@ -151,6 +152,29 @@
 				FF22E53C1E8770E800A69469 /* Info.plist */,
 			);
 			path = QuickAdderUITests;
+			sourceTree = "<group>";
+		};
+		FFEA6DDB1EAF38B5008997B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFEA6DDC1EAF38E1008997B1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FF22E51B1E8770E800A69469 /* ViewController.h */,
+				FF22E51C1E8770E800A69469 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		FFEA6DDD1EAF38EF008997B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Phantom2000X/QuickAdder.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/Phantom2000X/QuickAdder.git", :tag => "0.0.2.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

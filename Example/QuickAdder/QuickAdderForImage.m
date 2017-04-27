@@ -1,4 +1,3 @@
-
 //
 //  QuickAdderWithImage.m
 //  QuickAdder
@@ -35,6 +34,22 @@
     return self;
 }
 
+- (void)cancelAddItem {
+    [super cancelAddItem];
+    [imageView removeFromSuperview];
+    NSString *message = [alertController message];
+    message = [message stringByReplacingOccurrencesOfString:@"\n\n\n\n\n\n\n" withString:@""];
+    [alertController setMessage:message];
+}
+
+- (void)finishAddItem {
+    [super finishAddItem];
+    [imageView removeFromSuperview];
+    imageView = nil;
+    NSString *message = [alertController message];
+    message = [message stringByReplacingOccurrencesOfString:@"\n\n\n\n\n\n\n" withString:@""];
+    [alertController setMessage:message];
+}
 
 - (void)textFieldDidChange: (UITextField *)theTextField {
     [okAction setEnabled:NO];
@@ -54,30 +69,30 @@
 }
 
 - (void)catchImageFromPicker: (NSNotification *)img {
-    if ([imageView image]) {
-        [imagePicker dismissViewControllerAnimated:YES completion:nil];
-        [imageView setImage:[img object]];
-        [viewController presentViewController:alertController animated:YES completion:nil];
-    } else {
-        NSString *message;
-        imageView = [[UIImageView alloc] initWithImage:[img object] ];
-        if ((message = [alertController message])) {
-            message = [message stringByAppendingString:@"\n\n\n\n\n\n\n"];
-            [alertController setMessage:message];
+    [imagePicker dismissViewControllerAnimated:YES completion:^{
+        if ([imageView image]) {
+            [imageView setImage:[img object]];
+            [viewController presentViewController:alertController animated:YES completion:nil];
         } else {
-            [alertController setMessage:@"\n\n\n\n\n\n\n"];
+            NSString *message;
+            imageView = [[UIImageView alloc] initWithImage:[img object] ];
+            if ((message = [alertController message])) {
+                message = [message stringByAppendingString:@"\n\n\n\n\n\n\n"];
+                [alertController setMessage:message];
+            } else {
+                [alertController setMessage:@"\n\n\n\n\n\n\n"];
+            }
+            [imageView setFrame:CGRectMake(alertController.view.frame.size.width/2-50, 75, 100, 100)];
+            [imageView setContentMode:UIViewContentModeScaleAspectFit];
+            [imageView setClipsToBounds:YES];
+            [alertController.view addSubview:imageView];
+            [viewController presentViewController:alertController animated:YES completion:nil];
         }
-        [imagePicker dismissViewControllerAnimated:YES completion:nil];
-        [imageView setFrame:CGRectMake(alertController.view.frame.size.width/2-50, 75, 100, 100)];
-        [imageView setContentMode:UIViewContentModeScaleAspectFit];
-        [imageView setClipsToBounds:YES];
-        [alertController.view addSubview:imageView];
-        [viewController presentViewController:alertController animated:YES completion:nil];
-    }
-    [returnDataDictionary setObject:[img object] forKey:imageName];
-    if ([self checkAllInTextFiledIsAccordingToRegular]) {
-        [okAction setEnabled:YES];
-    }
+        [returnDataDictionary setObject:[img object] forKey:imageName];
+        if ([self checkAllInTextFiledIsAccordingToRegular]) {
+            [okAction setEnabled:YES];
+        }
+    }];
 }
 
 - (BOOL)checkAllInTextFiledIsAccordingToRegular {

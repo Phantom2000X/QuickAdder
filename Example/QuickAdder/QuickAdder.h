@@ -28,10 +28,14 @@
 
 - (void)openQuickAdder;
 
+- (void)finishAddItem;
+
+- (void)cancelAddItem;
+
 - (void)textFieldDidChange: (UITextField *_Nonnull)theTextField;
 
 - (BOOL)checkTextFieldsIsRight: (UITextField *_Nonnull)theTextField;
 
-+ (UIViewController *_Nonnull)getViewControllerWithView: (UIView *_Nonnull)view;
++ (UIViewController *_Nullable)getViewControllerWithView: (UIView *_Nonnull)view;
 
 @end
